@@ -1,0 +1,16 @@
+#公共配置文件，不管你在生产环境还是开发环境，当你去尝试拉取配置的时候它总会到foodie-user-service.yml中把你的属性拿过来，
+#在拉取这些文件的时候会采用一种merge的操作，打个比方你在foodie-user-service-dev.yml中没有配置actuator，但是你在foodie-user-service.yml中配置了actuator
+#咱的配置中心在拉取foodie-user-service-dev.yml属性的时候会自动行驶merge操作，将那些在foodie-user-service-dev.yml中没有配置
+#但是在foodie-user-service.yml中配置了的属性也给它拿到
+
+#actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false

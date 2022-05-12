@@ -7,5 +7,5 @@ mariadb:
 userservice: 
   registration:
     #开启这个开关说明我们的注册功能被关闭了
-    disabled: true
+    disabled: false
     
